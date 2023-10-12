@@ -1,0 +1,9 @@
+quick breakfast
+fast breakfast
+easy breakfast
+quick lunch
+fast lunch
+easy lunch
+quick dinner
+fast dinner
+easy dinner

@@ -1,0 +1,4 @@
+name: SearchStax Studio Vue Search Page
+description: Custom module for SearchStax Studio Vue Search Page
+type: module
+core_version_requirement: ^8 || ^9 || ^10

@@ -1,0 +1,4 @@
+name: SearchStax Studio theme
+description: Custom module for SearchStax Studio theme
+type: module
+core_version_requirement: ^8 || ^9 || ^10

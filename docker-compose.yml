@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  drupal:
+    image: drupal:10.1.3-php8.2-apache
+    container_name: drupal
+    ports:
+      - "8088:80"
+    restart: unless-stopped
+    volumes:
+      - drupal-data:/var/www/html
+      - ./configs/php.ini:/usr/local/etc/php/php.ini
+    env_file:
+      - ./configs/drupal-install.env
+    depends_on:
+      - db
+    networks:
+      - drupal
+
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: drupaldb
+      POSTGRES_USER: drupaluser
+      POSTGRES_PASSWORD: drupalpassword
+      POSTGRES_EXTENSIONS: pg_trgm
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./configs/:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+
+  drupal-vue:
+    stdin_open: true
+    image: node:16-alpine
+    container_name: drupal-vue
+    ports:
+      - 8080:8080
+    environment: 
+      - WATCHPACK_POLLING=true
+    build:
+      context: ./drupal-vue
+      dockerfile: Dockerfile    
+    volumes:
+      - ./drupal-vue:/app
+      - /app/node_modules
+
+volumes:
+  drupal-data:
+  db-data:
+  drupal-headless-data:
+  drupal-vue:
+
+networks:
+  drupal:

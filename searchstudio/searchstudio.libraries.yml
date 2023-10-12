@@ -1,0 +1,9 @@
+searchstudio-app:
+  header: true
+  version: 3.0
+  js:
+    https://static.searchstax.com/studio-js/v3/js/studio-app.js: { external: true, attributes: { defer: true, async: true } }
+    https://static.searchstax.com/studio-js/v3/js/studio-vendors.js: { external: true, attributes: { defer: true, async: true } }
+  css:
+    theme:
+      https://static.searchstax.com/studio-js/v3/css/studio-app.css: { external: true, attributes: { defer: true, async: true } }
