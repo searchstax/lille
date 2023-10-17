@@ -48,7 +48,7 @@ build-search-page-windows:
 	docker exec drupal vendor/bin/drush pmu searchstax_studio_vue || echo 'SearchStax Studio not installed yet'
 	docker exec drupal vendor/bin/drush cr
 	copy drupal-vue\dist\index.html searchstax_studio_vue\templates\vue.html.twig
-	robocopy drupal-vue\dist\* searchstax_studio_vue\dist || echo 'Copied Vue buid into Drupal module'
+	robocopy drupal-vue\dist\* searchstax_studio_vue\dist || echo 'Copied Vue build into Drupal module'
 	docker cp searchstax_studio_vue drupal:/opt/drupal/web/modules
 	docker exec drupal vendor/bin/drush en searchstax_studio_vue -y
 	echo 'Vue module added to Drupal'
@@ -58,5 +58,5 @@ export-search-page-windows:
 	-C drupal-vue npm install
 	npm run build --prefix 'drupal-vue'
 	copy drupal-vue\dist\index.html searchstax_studio_vue\templates\vue.html.twig
-	robocopy drupal-vue\dist\* searchstax_studio_vue\dist || echo 'Copied Vue buid into Drupal module'
+	robocopy drupal-vue\dist\* searchstax_studio_vue\dist || echo 'Copied Vue build into Drupal module'
 	echo 'Vue module ready'
