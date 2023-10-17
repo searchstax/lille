@@ -56,7 +56,7 @@ You can use our prebuilt Search UI App or build your own custom Vue search resul
 
 ### Building the Vue Search Page
 
-Once you've created a SearchStax Studio account you can add the appropriate access tokens and API endpoints to your Vue app. Open `drupal-app/src/config.js` and replace the demo site credentials with yours.
+Once you've created a SearchStax Studio account you can add the appropriate access tokens and API endpoints to your Vue app. Open `drupal-vue/src/config.js` and replace the demo site credentials with yours.
 
 Make any updates to the Vue app and test in the Vue development environment ([`http://localhost:8080`](http://localhost:8080)).
 

@@ -59,10 +59,9 @@
 }
 
 #searchstax-studio-vue-app {
-  padding-top: 0.5rem;
   min-height: 100vh;
   color: var(--color-text);
-  background: #fbf5ee;
+  background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;

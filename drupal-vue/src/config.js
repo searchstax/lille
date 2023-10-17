@@ -1,11 +1,11 @@
 const searchstaxConfig = {
     language: 'en',
-    searchURL: 'https://searchcloud-2-us-east-1.searchstax.com/29847/corpsiteuxsamples-1442/emselect',
-    suggesterURL: 'https://searchcloud-2-us-east-1.searchstax.com/29847/corpsiteuxsamples-1442_suggester/emsuggest',
-    trackApiKey: 'DPAOKNB9c5chZZDwN1Il9dLUCLMGF1ggehy0dWewZwk',
-    searchAuth: 'b065448ad1484e205f4851f0ce89d128e704e2f4',
+    searchURL: 'https://searchcloud-1-eu-west-2.searchstax.com/29847/drupallille-1549/emselect',
+    suggesterURL: 'https://searchcloud-1-eu-west-2.searchstax.com/29847/drupallille-1549_suggester/emsuggest',
+    trackApiKey: 'VnrgUoDzWXYfnlMdzX1NTi2h3pAYwnSdHoioue8JD1Y',
+    searchAuth: '58637626f2de4e35c2f19eefea6a1e144020aa9f',
     authType: 'token',
-    relatedSearchesURL: "https://app.searchstax.com/api/v1/1442/related-search/",
-    relatedSearchesAPIKey: "fac98ad405cc50e0c0693331e8d2119de592f0e3",
+    relatedSearchesURL: "https://app.searchstax.com/api/v1/1549/related-search/",
+    relatedSearchesAPIKey: "544e5121148ed329fd8adbad02daa7bcce8a212e",
 };
 export { searchstaxConfig };

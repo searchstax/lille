@@ -5,23 +5,22 @@
         <div class="searchstax-search-results" v-if="searchResults && searchResults.length">
           <div
             class="searchstax-search-result"
-            :class="{ 'has-thumbnail': searchResult.thumbnail }"
             :key="searchResult.uniqueId"
             v-for="searchResult in searchResults"
           >
-
-            <div :key="unmappedField.key" v-for="unmappedField in searchResult.unmappedFields">
-                <div
-                  v-if="unmappedField.isImage && typeof unmappedField.value === 'string'"
-                  class="searchstax-search-result-image-container"
-                >
-                  <img :src="unmappedField.value" class="searchstax-result-image" />
-                </div>
-                <div v-else>
-                  <p class="searchstax-search-result-common">{{ unmappedField.value }}</p>
-                </div>
+            <a
+              v-if="searchResult.url"
+              :href="searchResult.url"
+              :data-searchstax-unique-result-id="searchResult.uniqueId"
+              @click="resultClicked(searchResult, $event)"
+              class="searchstax-result-item-link"
+            ></a>
+            <div
+              v-if="searchResult.thumbnail != null"
+              class="searchstax-search-result-image-container"
+            >
+              <img class="searchstax-result-image" v-bind:src="'http://localhost:8088' + searchResult.thumbnail" />
             </div>
-
             <div class="searchstax-search-result-content">
 
                 <div class="searchstax-search-result-title-wrapper">
@@ -42,16 +41,19 @@
                 >
                   {{ searchResult.description }}
                 </p>
+                <div :key="unmappedField.key" v-for="unmappedField in searchResult.unmappedFields">
+                    <div
+                      v-if="unmappedField.key === 'its_field_preparation_time'"
+                    >
+                      <p class="searchstax-search-result-common"><b>Prep Time</b> - {{ unmappedField.value }} m</p>
+                    </div>
+                    <div
+                      v-if="unmappedField.key === 'its_field_cooking_time'"
+                    >
+                      <p class="searchstax-search-result-common"><b>Cook Time</b> - {{ unmappedField.value }} m</p>
+                    </div>
+                </div>
             </div>
-
-            
-            <a
-              v-if="searchResult.url"
-              :href="searchResult.url"
-              :data-searchstax-unique-result-id="searchResult.uniqueId"
-              @click="resultClicked(searchResult, $event)"
-              class="searchstax-result-item-link"
-            ></a>
 
           </div>
         </div>

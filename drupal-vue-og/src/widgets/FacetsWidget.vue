@@ -22,7 +22,7 @@
             class="searchstax-facet-container"
             :class="{ active: isNotDeactivated(facet.name) }"
           >
-            <div v-if="facet.name !== 'its_field_cooking_time'">
+            <div>
               <div class="searchstax-facet-title-container" @click="toggleFacetGroup(facet.name)">
                 <div class="searchstax-facet-title">{{ facet.label }}</div>
                 <div class="searchstax-facet-title-arrow active"></div>
