@@ -1,10 +1,5 @@
 # SearchStax - Drupal Demo Site Install
 
-## Session Links
-
-- [Attendee Survey](https://forms.gle/vXpQWTvPVMM8tk356)
-- [SearchStax Studio Account Sign Up](https://searchstudio.searchstax.com/freetrial)
-
 ## Drupal Dev Environment Prerequisites
 
 You'll need the following software and packages installed to get started
